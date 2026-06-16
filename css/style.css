@@ -56,3 +56,20 @@ body {
     opacity:1;
     transform:scale(1.03)
 }
+
+.toggle {
+    position:absolute;
+    top:5%;
+    right:2%;
+}
+
+a#toggleClick > img {
+    border-radius:100px;
+    transition:0.3s;
+    border:2px solid white;
+}
+
+a#toggleClick > img:hover {
+    border-radius:100px;
+    transform:scale(1.05);
+}
