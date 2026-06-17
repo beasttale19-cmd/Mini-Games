@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../../img/bg-sky.jpg');
+    background-color:skyblue;
+}
+
+.head {
+    display:flex;
+    align-items: center;
+    flex-direction:column;
+}
+
+.head > p {
+    letter-spacing: 2px;
+}
+
+.head > hr {
+    width:100vw;
+    border-color:black;
+}

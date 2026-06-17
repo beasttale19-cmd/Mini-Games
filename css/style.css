@@ -61,6 +61,8 @@ body {
     position:absolute;
     top:5%;
     right:2%;
+    opacity:70%;
+    transition:0.3s;
 }
 
 a#toggleClick > img {
@@ -73,4 +75,8 @@ a#toggleClick > img:hover {
     border-radius:100px;
     transform:scale(1.05);
     cursor:pointer;
+}
+
+.toggle:hover {
+    opacity:100%;
 }
