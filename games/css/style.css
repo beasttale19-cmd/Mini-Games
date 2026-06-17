@@ -23,3 +23,33 @@ body {
     width:100vw;
     border-color:black;
 }
+
+.container {
+    width:100vw;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap:wrap;
+    margin:2vh 0;
+}
+
+.container > div {
+    transition:0.3s;
+}
+
+.container > div:hover {
+    transform: scale(1.04);
+}
+
+.container > div img{
+    border-radius:20px;
+    margin-bottom:10px;
+}
+
+.Clicker > a {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Press Start 2P", Poppins;
+}

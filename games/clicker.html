@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cookie Clicker</title>
+        <link rel="stylesheet" href="../css/font.css">
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                background-color:rgb(94, 35, 35);
+                color:white;
+            }
+
+            div.top {
+                display: flex;
+                width:100vw;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            div.top > img {
+                transition:0.15s;
+            }
+
+            div.top > img:hover {
+                transform: scale(1.05);
+                cursor:pointer;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="top">
+            <img id="toClick" width="200px" height="200px" src="../img/cookie.png"
+                alt="Cookie">
+            <h3 id="infoGive">You have total 0 cookies!</h3>
+        </div>
+
+        <div class="rewards"></div>
+
+        <script>
+        let totalCookies = 0;
+        let clickImg = document.getElementById("toClick");
+        let info = document.getElementById("infoGive");
+
+            clickImg.onclick = function() {
+                totalCookies = totalCookies + 1;
+                info.textContent = `You have total ${totalCookies} cookies!`
+
+                clickImg.style.transform = "translateY(10px)"
+
+                setTimeout(function(){
+                    clickImg.style.transform = "translateY(0px)"
+                },100);
+                
+            }
+        </script>
+    </body>
+</html>
