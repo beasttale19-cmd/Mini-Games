@@ -16,6 +16,8 @@
             body {
                 background-color:rgb(94, 35, 35);
                 color:white;
+                width:100vw;
+                height:100vh;
             }
 
             div.top {
@@ -28,6 +30,7 @@
 
             div.top > img {
                 transition:0.15s;
+                /* border-radius:1000px; */
             }
 
             div.top > img:hover {
@@ -35,24 +38,117 @@
                 cursor:pointer;
             }
 
+            div.rewards {
+                margin:5vh 0;
+                display:flex;
+                flex-direction: column;
+                width:100vw;
+                align-items: center;
+                justify-content: center;
+            }
+            div.rewards > div {
+                color:rgb(255, 255, 255);
+                background-color:rgb(9, 16, 104);
+                border-radius: 7px;
+                padding:5px;
+                width:30vw;
+                display:none;
+                align-items:center;
+                justify-content: space-between;
+                margin-bottom:3vh;
+            }
+
+            #boom {
+                /* display:none; */
+                display:flex;
+                position:absolute;
+                left:30%;
+                bottom:50%;
+                transition:0.3s;
+            }
+
+            #boom:hover {
+                transform: scale(1.1);
+                cursor:pointer;
+            }
+
+            .h {
+                position:absolute;
+                right:50%;
+                top:50%;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                color:black;
+                /* display:none; */
+                animation-name:forH;
+                animation-iteration-count: infinite;
+                animation-duration: 4s;
+            }
+
+            @keyframes forH {
+                0% {
+                    color:red;
+                }
+
+                25% {
+                    color:yellow;
+                }
+
+                50% {
+                    color:rgb(1, 12, 107);
+                }
+
+                100% {
+                    color:black;
+                }
+            }
         </style>
     </head>
-    <body>
+    <body id="body">
         <div class="top">
-            <img id="toClick" width="200px" height="200px" src="../img/cookie.png"
+            <img id="toClick" width="200px" height="200px"
+                src="../img/cookie.png"
                 alt="Cookie">
             <h3 id="infoGive">You have total 0 cookies!</h3>
         </div>
 
-        <div class="rewards"></div>
+        <div class="rewards">
+            <div id="coin1">
+                <img style="border-radius:10px;" width="50px" height="50px"
+                    src="../img/at-twenty.jpg"
+                    alt="no-img">
+                <h4>Your now get 5+ cookies every click!</h4>
+            </div>
+
+            <div id="coin2" style="background-color: rgb(119, 78, 1);">
+                <img style="border-radius:10px;" width="50px" height="50px"
+                    src="../img/at-twenty.jpg"
+                    alt="no-img">
+                <h4>Your now get 10+ cookies every click!</h4>
+            </div>
+        </div>
+
+        <div style="display:none;" id="boom">
+            <img width="50px" height="50px" src="../img/favicon.png"
+                alt="Booom">
+        </div>
+
+        <div id="h" class="h">
+            <h3>You Have 10 seconds to make as more cookies as you can!</h3>
+        </div>
 
         <script>
         let totalCookies = 0;
+        let cookiesPerClick = 1;
         let clickImg = document.getElementById("toClick");
         let info = document.getElementById("infoGive");
+        let boom = document.getElementById("boom");
+        let color1 = "red";
+        let color2 = "yellow";
 
             clickImg.onclick = function() {
-                totalCookies = totalCookies + 1;
+                totalCookies = totalCookies + cookiesPerClick;
                 info.textContent = `You have total ${totalCookies} cookies!`
 
                 clickImg.style.transform = "translateY(10px)"
@@ -60,8 +156,29 @@
                 setTimeout(function(){
                     clickImg.style.transform = "translateY(0px)"
                 },100);
-                
+
+                if (totalCookies === 20) {
+                    document.getElementById("coin1").style.display = "flex"
+                    cookiesPerClick = 5;
+                }
+
+                if (totalCookies === 100) {
+                    document.getElementById("coin2").style.display = "flex"
+                    cookiesPerClick = 10;
+                    document.getElementById("boom").style.display = "flex"
+                }
+
+                boom.onclick = function(){
+                    document.getElementById("body").style.backgroundColor = color1;
+                    document.getElementById("h").style.display = "flex";
+                    setTimeout(function() {
+                        cookiesPerClick = 50;
+                        document.getElementById("body").style.backgroundColor = "rgb(94, 35, 35)";
+                    },5000);
+                }
+
             }
+           
         </script>
     </body>
 </html>
