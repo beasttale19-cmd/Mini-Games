@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <link rel="stylesheet" href="../css/font.css">
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            width:100vw;
+            height:100vh;
+        }
+
+        .container {
+            display:flex;
+            /* flex-wrap:wrap; */
+            align-items: center;
+            flex-direction: column;
+            width:60vw;
+            height:80vh;
+            background-color: rgb(31, 30, 30);
+        }
+
+        .display {
+            width:100%;
+            background-color:black;
+            height:30%;
+        }
+
+        .container button {
+            background-color:gray;
+            font-size:2em;
+            width:50px;
+            height:50px;
+            margin:10px;
+        }
+
+        #enter {
+            margin-top:3vh ;
+            display:flex;
+            justify-content: space-around;
+            width:100%;
+            flex-wrap:wrap;
+        }
+
+        #enter > div {
+            display:flex;
+            flex-direction: column;
+            flex-wrap:wrap;
+            height:25vh;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="display">rgf</div>
+            <div id="enter">
+                <div class="numbers">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                    <button>0</button>
+                </div>
+                <div class="symbols">
+                    <button>+</button>
+                    <button>-</button>
+                    <button>*</button>
+                    <button>/</button>
+                    <button>=</button>
+                    <button>AC</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="calculator.js"></script>
+    </body>
+</html>
