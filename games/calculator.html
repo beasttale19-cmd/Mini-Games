@@ -30,12 +30,20 @@
             width:60vw;
             height:80vh;
             background-color: rgb(31, 30, 30);
+            border-radius:10px;
+            overflow: hidden;
         }
 
         .display {
             width:100%;
             background-color:black;
             height:30%;
+            font-size:3em;
+            display:flex;
+            justify-content:flex-end;
+            align-items: flex-end;
+            color:white;
+            padding:20px;
         }
 
         .container button {
@@ -64,31 +72,31 @@
     </head>
     <body>
         <div class="container">
-            <div class="display">rgf</div>
+            <div class="display" id="screen">0</div>
             <div id="enter">
                 <div class="numbers">
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button>
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button>
-                    <button>0</button>
+                    <button onclick="press(`1`)">1</button>
+                    <button onclick="press(`2`)">2</button>
+                    <button onclick="press(`3`)">3</button>
+                    <button onclick="press(`4`)">4</button>
+                    <button onclick="press(`5`)">5</button>
+                    <button onclick="press(`6`)">6</button>
+                    <button onclick="press(`7`)">7</button>
+                    <button onclick="press(`8`)">8</button>
+                    <button onclick="press(`9`)">9</button>
+                    <button onclick="press(`0`)">0</button>
                 </div>
                 <div class="symbols">
-                    <button>+</button>
-                    <button>-</button>
-                    <button>*</button>
-                    <button>/</button>
-                    <button>=</button>
-                    <button>AC</button>
+                    <button onclick="press(`+`)">+</button>
+                    <button onclick="press(`-`)">-</button>
+                    <button onclick="press(`*`)">*</button>
+                    <button onclick="press(`/`)">/</button>
+                    <button onclick="calculate">=</button>
+                    <button onclick="clearAll">AC</button>
                 </div>
             </div>
         </div>
 
-        <script src="calculator.js"></script>
+        <script src="js/calculator.js"></script>
     </body>
 </html>
