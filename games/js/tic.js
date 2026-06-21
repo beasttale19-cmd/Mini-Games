@@ -38,11 +38,13 @@ function press(value) {
     if (click.textContent === "O") {
         turn = 'X'
         click.textContent = `${turn}`;
+        click.style.color = "green";
     }
 
     else {
         turn = "O"
         click.textContent = `${turn}`;
+        click.style.color = "rgb(7, 21, 82)";
     }    
 
     // ending1
