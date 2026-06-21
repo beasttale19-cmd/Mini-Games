@@ -1,6 +1,6 @@
 let turn = "O";
 
-let btn = document.getElementsByTagName("button");
+let turnTxt = document.getElementById("turn");
 let t1 = document.getElementById("1");
 let t2 = document.getElementById("2");
 let t3 = document.getElementById("3");
@@ -12,17 +12,28 @@ let t8 = document.getElementById("8");
 let t9 = document.getElementById("9");
 let textError = document.getElementById("error");
 
+// audio
+let victoryMusic = document.getElementById("victory");
+let correctMusic = document.getElementById("correct");
+let errorMusic = document.getElementById("errorM");
+let faahMusic = document.getElementById("faah");
+
 function press(value) {
+    
     const click = document.getElementById(value);
     if (click.textContent !== "") {
         textError.textContent = `ERRORS: THE PLACE IS TAKEN ALREADY!`
+        errorMusic.currentTime = 0;
+        errorMusic.play()
         setTimeout(() => {
             textError.textContent = `ERRORS:`
         }, 600)
         return;
     }
+    
 
-    click.textContent = `${turn}`;
+    click.textContent = `${turn}`;    
+    turnTxt.textContent = `Turn: ${turn}`;
 
     if (click.textContent === "O") {
         turn = 'X'
@@ -32,54 +43,94 @@ function press(value) {
     else {
         turn = "O"
         click.textContent = `${turn}`;
-    }
+    }    
 
     // ending1
     if (t1.textContent !== "" && t1.textContent === t2.textContent && t2.textContent === t3.textContent) {
-        alert(`${t1.textContent} Won the game. RESTARTING...`)
-        window.location.reload();
+        victoryMusic.play();
+
+        setTimeout(() =>{
+            alert(`${t1.textContent} Won the game. RESTARTING...`)
+            window.location.reload();
+        },100)
+        return;
     }
 
     // ending2
     if (t1.textContent !== "" && t1.textContent === t5.textContent && t5.textContent === t9.textContent) {
-        alert(`${t1.textContent} Won the game. RESTARTING...`)
-        window.location.reload();
+        victoryMusic.play();
+
+        setTimeout(() =>{
+            alert(`${t1.textContent} Won the game. RESTARTING...`)
+            window.location.reload();
+        },100)
+        return;
     }
 
     // ending3
     if (t3.textContent !== "" && t3.textContent === t5.textContent && t5.textContent === t7.textContent) {
-        alert(`${t3.textContent} Won the game. RESTARTING...`)
-        window.location.reload();
+        victoryMusic.play();
+
+        setTimeout(() =>{
+            alert(`${t3.textContent} Won the game. RESTARTING...`)
+            window.location.reload();
+        },100)
+        return;
     }
 
     // ending4
     if (t4.textContent !== "" && t4.textContent === t5.textContent && t5.textContent === t6.textContent) {
-        alert(`${t4.textContent} Won the game. RESTARTING...`)
-        window.location.reload();
+        victoryMusic.play();
+
+        setTimeout(() =>{
+            alert(`${t4.textContent} Won the game. RESTARTING...`)
+            window.location.reload();
+        },100)
+        return;
     }
 
     // ending5
     if (t7.textContent !== "" && t7.textContent === t8.textContent && t8.textContent === t9.textContent) {
-        alert(`${t7.textContent} Won the game. RESTARTING...`)
-        window.location.reload();
+        victoryMusic.play();
+
+        setTimeout(() =>{
+            alert(`${t7.textContent} Won the game. RESTARTING...`)
+            window.location.reload();
+        },100)
+        return;
     }
 
     // ending6
     if (t1.textContent !== "" && t1.textContent === t4.textContent && t4.textContent === t7.textContent) {
-        alert(`${t1.textContent} Won the game. RESTARTING...`)
-        window.location.reload();
+        victoryMusic.play();
+
+        setTimeout(() =>{
+            alert(`${t1.textContent} Won the game. RESTARTING...`)
+            window.location.reload();
+        },100)
+        return;
     }
 
     // ending7
     if (t3.textContent !== "" && t3.textContent === t6.textContent && t6.textContent === t9.textContent) {
-        alert(`${t3.textContent} Won the game. RESTARTING...`)
-        window.location.reload();
+        victoryMusic.play();
+
+        setTimeout(() =>{
+            alert(`${t3.textContent} Won the game. RESTARTING...`)
+            window.location.reload();
+        },100)
+        return;
     }
 
     // ending8
     if (t2.textContent !== "" && t2.textContent === t5.textContent && t5.textContent === t8.textContent) {
-        alert(`${t2.textContent} Won the game. RESTARTING...`)
-        window.location.reload();
+        victoryMusic.play();
+
+        setTimeout(() =>{
+            alert(`${t2.textContent} Won the game. RESTARTING...`)
+            window.location.reload();
+        },100)
+        return;
     }
 
     // draw
@@ -94,8 +145,18 @@ function press(value) {
     t8.textContent !== "" &&
     t9.textContent !== ""
     ){
-        alert(`The Game is Draw, Try Again!?`)
-        window.location.reload();
+        correctMusic.currentTime = 0;
+        faahMusic.play()
+
+        setTimeout(() =>{
+            alert(`The Game is Draw, Try Again!?`)
+            window.location.reload();   
+        },100);
+
+        return;
     }
+
+    correctMusic.currentTime = 0;
+    correctMusic.play()
 
 }
