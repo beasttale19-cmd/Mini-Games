@@ -1,32 +1,32 @@
 let turn = "O";
 
-let t1=document.getElementById("1");
-let t2=document.getElementById("2");
-let t3=document.getElementById("3");
-let t4=document.getElementById("4");
-let t5=document.getElementById("5");
-let t6=document.getElementById("6");
-let t7=document.getElementById("7");
-let t8=document.getElementById("8");
-let t9=document.getElementById("9");
-let textError=document.getElementById("error")
-let winTxt=document.getElementById("wonTxt")
+let btn = document.getElementsByTagName("button");
+let t1 = document.getElementById("1");
+let t2 = document.getElementById("2");
+let t3 = document.getElementById("3");
+let t4 = document.getElementById("4");
+let t5 = document.getElementById("5");
+let t6 = document.getElementById("6");
+let t7 = document.getElementById("7");
+let t8 = document.getElementById("8");
+let t9 = document.getElementById("9");
+let textError = document.getElementById("error");
 
 function press(value) {
     const click = document.getElementById(value);
-    if (click.textContent !==""){
+    if (click.textContent !== "") {
         textError.textContent = `ERRORS: THE PLACE IS TAKEN ALREADY!`
-    setTimeout(() =>{
-        textError.textContent = `ERRORS:`
-    },500)
-    return;
+        setTimeout(() => {
+            textError.textContent = `ERRORS:`
+        }, 600)
+        return;
     }
 
-    click.textContent = `${turn}`;  
-    
+    click.textContent = `${turn}`;
+
     if (click.textContent === "O") {
         turn = 'X'
-    click.textContent = `${turn}`;
+        click.textContent = `${turn}`;
     }
 
     else {
@@ -82,6 +82,20 @@ function press(value) {
         window.location.reload();
     }
 
+    // draw
+    if (
+    t1.textContent !== "" &&
+    t2.textContent !== "" &&
+    t3.textContent !== "" &&
+    t4.textContent !== "" &&
+    t5.textContent !== "" &&
+    t6.textContent !== "" &&
+    t7.textContent !== "" &&
+    t8.textContent !== "" &&
+    t9.textContent !== ""
+    ){
+        alert(`The Game is Draw, Try Again!?`)
+        window.location.reload();
+    }
 
-  
 }
