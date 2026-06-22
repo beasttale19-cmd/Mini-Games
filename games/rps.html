@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="icon" href="../img/favicon.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color:rgb(233, 241, 217);
+        }
+
+        .choose {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            width:100vw;
+            height:100vh;
+            gap:34px;
+        }
+
+        .choose > button {
+            /* border: none; */
+            /* background-color: inherit; */
+            transition:0.3s;
+            perspective: 1000px;
+        }
+
+        .choose > button:hover {
+            cursor:pointer;
+        }
+
+        .bot-choose {
+            width:100vw;
+            height:100vh;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="choose">
+        <button class="rock">
+            <img width="300px" height="300px" src="../img/rock.png" alt="no-img">
+            <h3>ROCK</h3>
+        </button>
+
+        <button class="paper">
+            <img width="300px" height="300px" src="../img/paper.png" alt="no-img">
+            <h3>PAPER</h3>
+        </button>
+
+        <button class="scissors">
+            <img width="300px" height="300px" src="../img/scissor.png" alt="no-img">
+            <h3>SCISSORS</h3>
+        </button>
+    </div>
+
+    <div class="bot-choose">
+        <h1>Bot Chooses:</h1>
+        <img width="300px" height="300px" src="../img/rock.png" alt="no-img">
+        <img width="300px" height="300px" src="../img/paper.png" alt="no-img">
+        <img width="300px" height="300px" src="../img/scissor.png" alt="no-img">
+    </div>
+</body>
+</html>
