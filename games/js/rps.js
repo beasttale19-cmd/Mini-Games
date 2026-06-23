@@ -17,7 +17,7 @@ let tie = document.getElementById("tie")
 let lose = document.getElementById("lose")
 let bg = document.getElementById("bg")
 
-bg.volume = 0.25;
+bg.volume = 0.75;
 // alert(`${random} is random`)
 clickRock.onclick = function () {
 
@@ -31,6 +31,11 @@ clickRock.onclick = function () {
         result.textContent = `Result: Tied, try again :D`
         tie.currentTime = 0;
         tie.play();
+
+        bg.pause()
+        setTimeout(()=>{
+            bg.play()
+        },1200)
     }
 
     else if (random === 1) {
@@ -38,12 +43,23 @@ clickRock.onclick = function () {
         result.textContent = `Result: You WON!`
         win.currentTime = 0;
         win.play();
+
+        bg.pause()
+        setTimeout(()=>{
+            bg.play()
+        },7200)
     }
     else if (random === 2) {
         botPaper.style.display = "flex";
         result.textContent = `Result: You lose, Better luck next time! :D`
         lose.currentTime = 0;
         lose.play();
+
+         
+        bg.pause()
+        setTimeout(()=>{
+            bg.play()
+        },2700)
     }
 }
 
@@ -59,6 +75,11 @@ clickPaper.onclick = function () {
         result.textContent = `Result: You Won!`
         win.currentTime = 0;
         win.play();
+        
+        bg.pause()
+        setTimeout(()=>{
+            bg.play()
+        },7200)
     }
     
     else if (random === 1) {
@@ -66,12 +87,22 @@ clickPaper.onclick = function () {
         botScissor.style.display = "flex";
         lose.currentTime = 0;
         lose.play();
+            
+        bg.pause()
+        setTimeout(()=>{
+            bg.play()
+        },2700)
     }
     else if (random === 2) {
         botPaper.style.display = "flex";
         result.textContent = `Result: Tied, try again :D`
         tie.currentTime = 0;
         tie.play();
+        
+        bg.pause()
+        setTimeout(()=>{
+            bg.play()
+        },1200)
     }
 }
 
@@ -87,6 +118,11 @@ clickScissor.onclick = function () {
         result.textContent = `Result: You Lose :), Beter Luck Next Time!`
         lose.currentTime = 0;
         lose.play();
+            
+        bg.pause()
+        setTimeout(()=>{
+            bg.play()
+        },2700)
     }
 
     else if (random === 1) {
@@ -94,11 +130,21 @@ clickScissor.onclick = function () {
         result.textContent = `Result: Tied, try again :D`;
         tie.currentTime = 0;
         tie.play();
+
+        bg.pause()
+        setTimeout(()=>{
+            bg.play()
+        },1200)
     }
     else if (random === 2) {
         botPaper.style.display = "flex";
         result.textContent = `Result: You Won!`;
         win.currentTime = 0;
         win.play();
+        
+        bg.pause()
+        setTimeout(()=>{
+            bg.play()
+        },7200)
     }
 }
