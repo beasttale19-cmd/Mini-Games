@@ -50,10 +50,42 @@
             align-items: center;
             justify-content: center;
         }
+
+        .bot-choose img {
+            /* display:flex; */
+            display:none;
+        }
+
+        .tryagain{
+            background-color:blue;
+            color:white;
+            transition:0.3s;
+            display:flex;
+            padding:5px;
+            border-radius:7px;
+        }
+
+        .tryagain:hover{
+            transform:scale(1.1);
+        }
+
+        .head {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position:absolute;
+            top:0%;
+        }
     </style>
     </head>
     <body>
         <div id="choose" class="choose">
+            <div class="head">
+                <h1>ROCK -- PAPER -- SCISSORS</h1>
+                <h3>Choose One!</h3>
+            </div>
+
             <button id="rock">
                 <img width="300px" height="300px" src="../img/rock.png"
                     alt="no-img">
@@ -66,7 +98,7 @@
                 <h3>PAPER</h3>
             </button>
 
-            <button id="scissors">
+            <button id="scissor">
                 <img width="300px" height="300px" src="../img/scissor.png"
                     alt="no-img">
                 <h3>SCISSORS</h3>
@@ -77,13 +109,20 @@
             <h1>Bot Chooses:</h1>
 
             <div class="c">
-                <img id="bot-rock" width="300px" height="300px" src="../img/rock.png"
+                <img id="bot-rock" width="300px" height="300px"
+                    src="../img/rock.png"
                     alt="no-img">
-                <img id="bot-paper" width="300px" height="300px" src="../img/paper.png"
+                <img id="bot-paper" width="300px" height="300px"
+                    src="../img/paper.png"
                     alt="no-img">
-                <img id="bot-scissor" width="300px" height="300px" src="../img/scissor.png"
+                <img id="bot-scissor" width="300px" height="300px"
+                    src="../img/scissor.png"
                     alt="no-img">
+
             </div>
+
+            <h2 id="result">Result:</h2>
+            <a href="rps.html" class="tryagain">Try Again!</a>
         </div>
 
         <script src="js/rps.js"></script>
