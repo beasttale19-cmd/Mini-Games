@@ -43,16 +43,16 @@ clickPaper.onclick = function () {
 
     if (random === 0) {
         botRock.style.display = "flex";
-        result.textContent = `Result: Tied, try again :D`
-    }
-
-    else if (random === 1) {
-        botScissor.style.display = "flex";
         result.textContent = `Result: You Won!`
+    }
+    
+    else if (random === 1) {
+        result.textContent = `Result: You Lose :), Beter Luck Next Time!`
+        botScissor.style.display = "flex";
     }
     else if (random === 2) {
         botPaper.style.display = "flex";
-        result.textContent = `Result: You Lose :), Beter Luck Next Time!`
+        result.textContent = `Result: Tied, try again :D`
     }
 }
 
@@ -65,12 +65,15 @@ clickScissor.onclick = function () {
 
     if (random === 0) {
         botRock.style.display = "flex";
+        result.textContent = `Result: You Lose :), Beter Luck Next Time!`
     }
 
     else if (random === 1) {
         botScissor.style.display = "flex";
+        result.textContent = `Result: Tied, try again :D`;
     }
     else if (random === 2) {
         botPaper.style.display = "flex";
+        result.textContent = `Result: You Won!`;
     }
 }
