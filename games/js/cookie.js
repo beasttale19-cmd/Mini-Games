@@ -7,6 +7,10 @@
 
         let dingMusic = document.getElementById("ding");
         let bgMusic = document.getElementById("bg");
+        
+        // rickRoll
+        let video = document.getElementById("video")
+        let rickVideo = document.getElementById("rickroll")
 
             clickImg.onclick = function() {
                 totalCookies = totalCookies + cookiesPerClick;
@@ -27,6 +31,11 @@
                     document.getElementById("coin2").style.display = "flex"
                     cookiesPerClick = 10;
                     document.getElementById("boom").style.display = "flex"
+                }
+
+                if (totalCookies >= 2000) {
+                    video.style.display = "flex";
+                    rickVideo.style.display = "flex";
                 }
 
                 boom.onclick = function(){
