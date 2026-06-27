@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cookie Clicker</title>
+        <link rel="stylesheet" href="../css/font.css">
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                background-image: url('../assets/bg.jpg');
+                background-size:cover;
+                background-position:center;
+            }
+
+            .container {
+                position:absolute;
+                bottom:0%;
+            }
+
+            .box {
+                width:100vw;
+                height:25vh;
+                background-color:green;
+            }
+
+            #player {
+                width:300px;
+                image-rendering: pixelated;
+                image-rendering: crisp-edges;
+                display:block;
+            }
+        </style>
+    </head>
+    <body id="body">
+        <div class="container">
+            <img id="player" src="../assets/Outline/120x80_gifs/__Idle.gif" alt="player">
+            <div class="box"></div>
+        </div>
+
+
+        <script src="js/cookie.js"></script>
+    </body>
+</html>

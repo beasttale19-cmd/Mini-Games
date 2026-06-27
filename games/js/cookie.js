@@ -11,6 +11,7 @@
         // rickRoll
         let video = document.getElementById("video")
         let rickVideo = document.getElementById("rickroll")
+        video.pause()
 
             clickImg.onclick = function() {
                 totalCookies = totalCookies + cookiesPerClick;
@@ -42,6 +43,7 @@
                 if (totalCookies >= 2000) {
                     video.style.display = "flex";
                     rickVideo.style.display = "flex";
+                    video.play()
                 }
 
                 boom.onclick = function(){
