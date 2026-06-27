@@ -15,6 +15,12 @@
             clickImg.onclick = function() {
                 totalCookies = totalCookies + cookiesPerClick;
                 info.textContent = `You have total ${totalCookies} cookies!`
+                document.body.style.boxShadow = "inset 0px 0px 20px rgb(0, 0, 0)";
+                document.body.style.transition = "0.3s";
+
+                setTimeout(()=>{
+                    document.body.style.boxShadow = "none"
+                },500)
 
                 clickImg.style.transform = "translateY(10px)"
 
