@@ -11,12 +11,6 @@ let playerY = 0;
 window.addEventListener('keydown', move);
 window.addEventListener('keyup', dontMove);
 
-let leftKey = "ArrowLeft"
-let rightKey = "ArrowRight"
-let aKey = "a"
-let dKey = "d"
-aKey = "leftKey"
-rightKey = ""
 
 function move(event) {
     if (event.key === 'ArrowRight' || event.key === 'd') {
@@ -70,7 +64,7 @@ function dontMove(event) {
         idle.style.display = "block";
     }
 
-     if (event.key === ' ' || event.key === 'w') {
+     if (event.key === ' ' || event.key === 'w' || event.key === 'ArrowUp') {
         playerY = playerY + 50;
         jump.classList.add("none");
         idle.classList.remove("none");
