@@ -16,7 +16,8 @@
             body {
                 background-image: url('../assets/bg.jpg');
                 background-size:cover;
-                background-position:center;
+                background-position:bottom center;
+                overflow:hidden;
             }
 
             .container {
@@ -30,21 +31,34 @@
                 background-color:green;
             }
 
-            #player {
+            #player > *{
                 width:300px;
                 image-rendering: pixelated;
                 image-rendering: crisp-edges;
                 display:block;
             }
+
+            .none {
+                display:none !important;
+            }
+
+            .player {
+                position:absolute;
+            } 
         </style>
     </head>
     <body id="body">
         <div class="container">
-            <img id="player" src="../assets/Outline/120x80_gifs/__Idle.gif" alt="player">
+            <div id="player">
+                <img id="idle" src="../assets/Outline/120x80_gifs/__Idle.gif" alt="player">
+                <img id="right" class="none" src="../assets/Outline/120x80_gifs/__Roll.gif" alt="player">
+                <!-- <img id="" class="none" src="" alt="player"> -->
+                <!-- <img id="" class="none" src="" alt="player"> -->
+            </div>
             <div class="box"></div>
         </div>
 
 
-        <script src="js/cookie.js"></script>
+        <script src="js/game.js"></script>
     </body>
 </html>
