@@ -16,33 +16,39 @@ window.addEventListener('keyup', dontMove);
 
 function move(event) {
 
-    banner.style.opacity= "0";
+    banner.style.opacity = "0";
     banner.style.transition = "1s";
 
     if (event.key === 'ArrowRight' || event.key === 'd') {
         playerX = playerX + 5;
 
-        if (left.style.display === "block"){
-            left.style.display = "none";
-            left.classList.add("none");
+        if (jump.style.display !== "block") {
+            if (left.style.display === "block") {
+                left.style.display = "none";
+                left.classList.add("none");
+            }
+            idle.classList.add("none");
+            right.classList.remove("none");
+            idle.style.display = "none";
+            right.style.display = "block";
         }
-
-        idle.classList.add("none");
-        right.classList.remove("none");
-        idle.style.display = "none";
-        right.style.display = "block";
     }
 
     if (event.key === ' ' || event.key === 'ArrowUp' || event.key === 'w') {
 
-        if (jump.style.display !== "block"){
-                playerY = playerY - 50;
-                idle.classList.add("none");
-                jump.classList.remove("none");
-                idle.style.display = "none"
-                jump.style.display = "block"
+        if (jump.style.display !== "block") {
+            playerY = playerY - 50;
+            idle.classList.add("none");
+            jump.classList.remove("none");
+            idle.style.display = "none"
+            jump.style.display = "block"
 
-                setTimeout (()=>{
+            right.style.display = "none"
+            left.style.display = "none"
+            right.classList.add("none")
+            left.classList.add("none")
+
+            setTimeout(() => {
                 playerY = playerY + 50;
                 jump.classList.add("none");
                 idle.classList.remove("none");
@@ -50,32 +56,25 @@ function move(event) {
                 idle.style.display = "block"
 
                 player.style.transform = `translateX(${playerX}px) translateY(${playerY}px)`
-                },200);
+            }, 200);
         }
     }
 
     if (event.key === 'ArrowLeft' || event.key === 'a') {
         playerX = playerX - 5;
 
-        idle.classList.add("none");
-        left.classList.remove("none");
-        idle.style.display = "none";
-        left.style.display = "block";
+        if (jump.style.display !== "block") {
+            idle.classList.add("none");
+            left.classList.remove("none");
+            idle.style.display = "none";
+            left.style.display = "block";
 
-        if (right.style.display === "block"){
-            right.style.display = "none";
-            right.classList.add("none");
+            if (right.style.display === "block"){
+                right.style.display = "none";
+                right.classList.add("none");
+            }
         }
     }
-
-    // if (event.key === 'ArrowLeft' || event.key === 'a' && event.key === 'ArrowRight' || event.key === 'd') {
-    //     left.classList.add("none");
-    //     idle.classList.remove("none");
-    //     left.style.display = "none";
-    //     idle.style.display = "block";
-    //     right.classList.add("none")
-    //     // right.style.display("none")
-    // }
 
     player.style.transform = `translateX(${playerX}px) translateY(${playerY}px)`;
 }
