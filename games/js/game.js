@@ -34,9 +34,24 @@ function move(event) {
     }
 
     if (event.key === ' ' || event.key === 'ArrowUp' || event.key === 'w') {
-        playerY = playerY - 50;
-        idle.classList.add("none");
-        jump.classList.remove("none");
+
+        if (jump.style.display !== "block"){
+                playerY = playerY - 50;
+                idle.classList.add("none");
+                jump.classList.remove("none");
+                idle.style.display = "none"
+                jump.style.display = "block"
+
+                setTimeout (()=>{
+                playerY = playerY + 50;
+                jump.classList.add("none");
+                idle.classList.remove("none");
+                jump.style.display = "none"
+                idle.style.display = "block"
+
+                player.style.transform = `translateX(${playerX}px) translateY(${playerY}px)`
+                },200);
+        }
     }
 
     if (event.key === 'ArrowLeft' || event.key === 'a') {
@@ -78,12 +93,6 @@ function dontMove(event) {
         idle.classList.remove("none");
         left.style.display = "none";
         idle.style.display = "block";
-    }
-
-     if (event.key === ' ' || event.key === 'w' || event.key === 'ArrowUp') {
-            playerY = playerY + 50;
-            jump.classList.add("none");
-            idle.classList.remove("none");
     }
 
     player.style.transform = `translateX(${playerX}px) translateY(${playerY}px)`;
