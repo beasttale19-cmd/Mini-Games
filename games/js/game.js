@@ -65,9 +65,9 @@ function dontMove(event) {
     }
 
      if (event.key === ' ' || event.key === 'w' || event.key === 'ArrowUp') {
-        playerY = playerY + 50;
-        jump.classList.add("none");
-        idle.classList.remove("none");
+            playerY = playerY + 50;
+            jump.classList.add("none");
+            idle.classList.remove("none");
     }
 
     player.style.transform = `translateX(${playerX}px) translateY(${playerY}px)`;
