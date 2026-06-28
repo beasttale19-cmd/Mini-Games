@@ -71,7 +71,8 @@
             }
 
             .banner h2 {
-                -webkit-text-stroke: 1px black;
+                background-color:black;
+                padding:5px;
                 color:white;
                 font-family: "Press Start 2P", sans-serif;
             }
@@ -102,6 +103,16 @@
                     /* opacity:0.8; */
                 }
             }
+
+            .info {
+                position:absolute;
+                top:0%;
+                right:0%;
+                color:white;
+                background-color:black;
+                padding:5px;
+                font-family: "Press Start 2P", sans-serif;
+            }
         </style>
     </head>
     <body id="body">
@@ -113,6 +124,12 @@
                 <img id="left" class="none" src="../assets/Outline/120x80_gifs/left-run.gif" alt="player">
             </div>
             <div class="box"></div>
+        </div> 
+        
+        <div class="info">
+            <h3>W - Jump!</h3>
+            <h3>-> - Move Right!</h3>
+            <h3><- - Move Left!</h3>
         </div>
 
         <div id="banner" class="banner">

@@ -22,6 +22,11 @@ function move(event) {
     if (event.key === 'ArrowRight' || event.key === 'd') {
         playerX = playerX + 5;
 
+        if (left.style.display === "block"){
+            left.style.display = "none";
+            left.classList.add("none");
+        }
+
         idle.classList.add("none");
         right.classList.remove("none");
         idle.style.display = "none";
@@ -41,6 +46,11 @@ function move(event) {
         left.classList.remove("none");
         idle.style.display = "none";
         left.style.display = "block";
+
+        if (right.style.display === "block"){
+            right.style.display = "none";
+            right.classList.add("none");
+        }
     }
 
     // if (event.key === 'ArrowLeft' || event.key === 'a' && event.key === 'ArrowRight' || event.key === 'd') {
