@@ -8,11 +8,17 @@ const jump = document.getElementById("jump")
 let playerX = 0;
 let playerY = 0;
 
+const banner = document.getElementById("banner");
+
 window.addEventListener('keydown', move);
 window.addEventListener('keyup', dontMove);
 
 
 function move(event) {
+
+    banner.style.opacity= "0";
+    banner.style.transition = "1s";
+
     if (event.key === 'ArrowRight' || event.key === 'd') {
         playerX = playerX + 5;
 
