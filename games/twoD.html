@@ -149,6 +149,10 @@
                 animation-duration:2s;
                 animation-iteration-count: infinite;
             }
+
+            .sound{
+                display:none;
+            }
         </style>
     </head>
     <body id="body">
@@ -183,6 +187,11 @@
             <h3>W - Jump!</h3>
             <h3>-> - Move Right!</h3>
             <h3><- - Move Left!</h3>
+        </div>
+
+        <div class="sound">
+            <audio id="hurt" src="../sound/classic_hurt.mp3"></audio>
+            <audio id="bg" src="../sound/bg-ele.mp3" autoplay loop></audio>
         </div>
 
         <div id="banner" class="banner">

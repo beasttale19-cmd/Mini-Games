@@ -11,6 +11,9 @@ const enemyAttack = document.getElementById("enemyAttack")
 // const enemyLeft = document.getElementById("left")
 // const enemyJump = document.getElementById("jump")
 
+// sound
+const hurt = document.getElementById("hurt")
+
 let playerX = 0;
 let playerY = 0;
 let enemyX = 300;
@@ -22,6 +25,7 @@ function checkDistance(){
         enemyIdle.classList.add("none");
         player.classList.add("hurt")
         enemyAttack.classList.remove("none");
+        hurt.play();
     }
 
     else {
