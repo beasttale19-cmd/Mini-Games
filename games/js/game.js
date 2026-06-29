@@ -20,10 +20,12 @@ function checkDistance(){
 
     if (distance < 60){
         enemyIdle.classList.add("none");
+        player.classList.add("hurt")
         enemyAttack.classList.remove("none");
     }
 
     else {
+        player.classList.remove("hurt")
         enemyAttack.classList.add("none");
         enemyIdle.classList.remove("none");
     }
