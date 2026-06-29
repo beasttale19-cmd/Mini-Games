@@ -5,8 +5,29 @@ const right = document.getElementById("right")
 const left = document.getElementById("left")
 const jump = document.getElementById("jump")
 
+const enemyIdle = document.getElementById("enemyIdle")
+const enemyAttack = document.getElementById("enemyAttack")
+// const enemyRight = document.getElementById("right")
+// const enemyLeft = document.getElementById("left")
+// const enemyJump = document.getElementById("jump")
+
 let playerX = 0;
 let playerY = 0;
+let enemyX = 300;
+
+function checkDistance(){
+    let distance = Math.abs(playerX - enemyX)
+
+    if (distance < 60){
+        enemyIdle.classList.add("none");
+        enemyAttack.classList.remove("none");
+    }
+
+    else {
+        enemyAttack.classList.add("none");
+        enemyIdle.classList.remove("none");
+    }
+}
 
 const banner = document.getElementById("banner");
 
@@ -57,6 +78,8 @@ function move(event) {
 
                 player.style.transform = `translateX(${playerX}px) translateY(${playerY}px)`
             }, 200);
+
+            checkDistance()
         }
     }
 
@@ -76,6 +99,7 @@ function move(event) {
         }
     }
 
+    checkDistance()
     player.style.transform = `translateX(${playerX}px) translateY(${playerY}px)`;
 }
 

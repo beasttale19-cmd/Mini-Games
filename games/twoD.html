@@ -42,15 +42,12 @@
                 image-rendering: pixelated;
                 image-rendering: crisp-edges;
                 display:block;
+                /* position:absolute; */
             }
 
             .none {
                 display:none !important;
             }
-
-            .player {
-                position:absolute;
-            } 
 
             .banner {
                 position:absolute;
@@ -113,19 +110,47 @@
                 padding:5px;
                 font-family: "Press Start 2P", sans-serif;
             }
+
+            .character {
+                display:flex;
+            }
+            #enemy > * {
+                width:300px;
+                image-rendering: pixelated;
+                image-rendering: crisp-edges;
+                display:block;
+                position:absolute;
+            }
         </style>
     </head>
     <body id="body">
         <div class="container">
-            <div id="player">
-                <img id="idle" src="../assets/Outline/120x80_gifs/__Idle.gif" alt="player">
-                <img id="right" class="none" src="../assets/Outline/120x80_gifs/__Run.gif" alt="player">
-                <img id="jump" class="none" src="../assets/Outline/120x80_gifs/__Jump.gif" alt="player">
-                <img id="left" class="none" src="../assets/Outline/120x80_gifs/left-run.gif" alt="player">
+            <div class="character">
+                <div id="player">
+                    <img id="idle"
+                        src="../assets/Outline/120x80_gifs/__Idle.gif"
+                        alt="player">
+                    <img id="right" class="none"
+                        src="../assets/Outline/120x80_gifs/__Run.gif"
+                        alt="player">
+                    <img id="jump" class="none"
+                        src="../assets/Outline/120x80_gifs/__Jump.gif"
+                        alt="player">
+                    <img id="left" class="none"
+                        src="../assets/Outline/120x80_gifs/left-run.gif"
+                        alt="player">
+                </div>
+                <div id="enemy">
+                    <img id="enemyIdle" src="../assets/NoOutline/120x80_gifs/__Idle.gif"
+                        alt="enemy">
+
+                    <img id="enemyAttack" class="none" src="../assets/NoOutline/120x80_gifs/__Attack.gif"
+                        alt="enemy">
+                </div>
             </div>
             <div class="box"></div>
-        </div> 
-        
+        </div>
+
         <div class="info">
             <h3>W - Jump!</h3>
             <h3>-> - Move Right!</h3>
@@ -133,7 +158,7 @@
         </div>
 
         <div id="banner" class="banner">
-            <img src="../assets/banner.png" alt="">
+            <img src="../assets/banner.png" alt>
             <h2>Press any key to Start!</h2>
         </div>
 
