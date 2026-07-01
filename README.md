@@ -44,32 +44,17 @@
 ![Img]({199285D5-3D99-4336-BAE8-402D49296515}.png)
 
 ### Cookie Clicker:
+![Img]({78E50BD9-02B2-4C27-A4E1-D9A9AF8647BA}.png)
 
-## Folder Structure
-
-```
-project-name/
-│
-├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-└── images/
-```
 
 ## Future Improvements
 
-- Add more features
-- Improve UI
-- Optimize performance
+- I will improve Two D, it got so much bugs.
+- I will add sound effects to calculator.
+- I will imrpove and expand Cookie Clicker.
 
 ## Author
 
-Your Name
+Nirjal Acharya - A **ninth** grade high school **web developer**. From **Nepal**. 
 
-GitHub: https://github.com/your-username
-
-## License
-
-This project is licensed under the MIT License.
+GitHub: [Click!](https://github.com/beasttale19-cmd/Mini-Games)
