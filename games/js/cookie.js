@@ -48,7 +48,7 @@
                 if (totalCookies >= 2000 && !unlockRickroll) {
                     video.style.display = "flex";
                     rickVideo.style.display = "flex";
-                    video.play()
+                    rickVideo.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
                     unlockRickroll = true;
                 }   
             }
