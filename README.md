@@ -46,7 +46,6 @@
 ### Cookie Clicker:
 ![Img]({78E50BD9-02B2-4C27-A4E1-D9A9AF8647BA}.png)
 
-
 ## Future Improvements
 
 - I will improve Two D, it got so much bugs.
