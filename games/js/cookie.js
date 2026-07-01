@@ -11,7 +11,10 @@
         // rickRoll
         let video = document.getElementById("video")
         let rickVideo = document.getElementById("rickroll")
-        video.pause()
+
+        let unlock20 = false;
+        let unlock100 = false;
+        let unlockRickroll = false;
 
             clickImg.onclick = function() {
                 totalCookies = totalCookies + cookiesPerClick;
@@ -29,40 +32,41 @@
                     clickImg.style.transform = "translateY(0px)"
                 },100);
 
-                if (totalCookies === 20) {
+                if (totalCookies >= 20 && !unlock20) {
                     document.getElementById("coin1").style.display = "flex"
                     cookiesPerClick = 5;
+                    unlock20 = true;
                 }
 
-                if (totalCookies === 100) {
+                if (totalCookies >= 100 && !unlock100) {
                     document.getElementById("coin2").style.display = "flex"
                     cookiesPerClick = 10;
                     document.getElementById("boom").style.display = "flex"
+                    unlock100 = true;
                 }
 
-                if (totalCookies >= 2000) {
+                if (totalCookies >= 2000 && !unlockRickroll) {
                     video.style.display = "flex";
                     rickVideo.style.display = "flex";
                     video.play()
-                }
+                    unlockRickroll = true;
+                }   
+            }
 
-                boom.onclick = function(){
-                    document.getElementById("body").style.backgroundColor = color1;
-                    document.getElementById("h").style.display = "flex";
-                    document.getElementById("boom").style.display = "none";
+            boom.onclick = function(){
+                document.getElementById("body").style.backgroundColor = color1;
+                document.getElementById("h").style.display = "flex";
+                document.getElementById("boom").style.display = "none";
+                bgMusic.currentTime = 0;
+                bgMusic.play()
+
+                cookiesPerClick = 50;
+                setTimeout(function() {
+                    document.getElementById("h").style.display = "none";
+                    cookiesPerClick = 10;
+                    document.getElementById("body").style.backgroundColor = "rgb(94, 35, 35)";
                     bgMusic.currentTime = 0;
-                    bgMusic.play()
-
-                    cookiesPerClick = 50;
-                    setTimeout(function() {
-                        document.getElementById("h").style.display = "none";
-                        cookiesPerClick = 10;
-                        document.getElementById("body").style.backgroundColor = "rgb(94, 35, 35)";
-                        bgMusic.currentTime = 0;
-                        bgMusic.pause()
-                    },10000);
-
-                    
-                }
-
+                    bgMusic.pause()
+                },10000);
+     
             }
